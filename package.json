@@ -7,13 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack-build": "webpack --progress --colors",
     "webpack-watch": "webpack --progress --colors --watch",
-    "webpack-serve": "webpack-dev-server --progress --colors"
+    "webpack-serve": "webpack-dev-server --progress --colors",
+    "deploy": "aws s3 cp main.js s3://chat-demo && aws s3 cp index.html s3://chat-demo && aws s3 cp bundle.js s3://chat-demo"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mattfite/chat-demo.git"
   },
-  "author": "Matt Fite",
+  "author": "matthew fite",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mattfite/chat-demo/issues"
