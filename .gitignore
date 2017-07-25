@@ -6,3 +6,4 @@ bundle.js
 
 # Ignore user config files
 .tm_properties
+credentials.json

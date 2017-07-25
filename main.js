@@ -1,13 +1,16 @@
 "use strict";
+
 import v4 from 'aws-signature-v4';
 import crypto from 'crypto';
 import MqttClient from './node_modules/mqtt/lib/client';
 import websocket from 'websocket-stream';
 
-const AWS_ACCESS_KEY = 'AKIAJHZ2ETU5YZ7VF7SA';
-const AWS_SECRET_ACCESS_KEY = '';
-const AWS_IOT_ENDPOINT_HOST = 'a1ln9ev76ltczn.iot.us-west-2.amazonaws.com';
-const MQTT_TOPIC = '/test/iot-pubsub-demo';
+import {
+  AWS_ACCESS_KEY,
+  AWS_SECRET_ACCESS_KEY,
+  AWS_IOT_ENDPOINT_HOST,
+  MQTT_TOPIC
+} from './credentials.json';
 
 var client;
 addLogEntry('Hello World!');

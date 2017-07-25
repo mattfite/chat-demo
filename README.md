@@ -2,6 +2,14 @@
 
 This is a living project built to demonstrate serverless concepts
 
+## Configure
+
+Create a file named credentials.json from the template, and fill in all the secret info. You'll have to get this from Matt.
+
+```bash
+cp credentials-template.json credentials.json
+```
+
 ## Develop
 
 To develop, install dependencies with [NPM](https://www.npmjs.com) and launch [webpack dev server](https://webpack.github.io/docs/webpack-dev-server.html):
