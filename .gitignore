@@ -1,0 +1,8 @@
+# Ignore installed dependencies
+node_modules
+
+# Ignore compiled assets
+bundle.js
+
+# Ignore user config files
+.tm_properties
