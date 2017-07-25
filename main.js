@@ -9,6 +9,7 @@ import {
   AWS_ACCESS_KEY,
   AWS_SECRET_ACCESS_KEY,
   AWS_IOT_ENDPOINT_HOST,
+  AWS_REGION,
   MQTT_TOPIC
 } from './credentials.json';
 
@@ -24,7 +25,7 @@ document.getElementById('connect').addEventListener('click', () => {
             'iotdevicegateway',
             crypto.createHash('sha256').update('', 'utf8').digest('hex'),
             {
-                'region': 'us-west-2',
+                'region': AWS_REGION,
                 'key': AWS_ACCESS_KEY,
                 'secret': AWS_SECRET_ACCESS_KEY,
                 'protocol': 'wss',
