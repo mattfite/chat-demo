@@ -6,19 +6,24 @@
 </head>
 <body>
     <h1>AWS IoT Pub/Sub Demo</h1>
-    <form>
-        <button type="button" id="connect">connect!</button>
 
+    <form id="connect">
+        <button type="submit">connect!</button>
+    </form>
+
+    <form id="input" style="display: none;">
         <div>
             <label for="message">Message to send:</label>
             <input type="text" id="message" value="Hello world!" />
 
-            <button type="button" id="send">send!</button>
+            <button type="submit">send!</button>
         </div>
     </form>
 
-    <h2>Log Output</h2>
-    <ul id="the-log"></ul>
+    <section id="output" style="display: none;">
+        <h2>Log Output</h2>
+        <ul id="the-log"></ul>
+    </section>
 
     <script src="/js/index.js"></script>
 </body>

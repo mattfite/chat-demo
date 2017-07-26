@@ -13,10 +13,12 @@ import {
   MQTT_TOPIC
 } from '../credentials.json';
 
+import $ from 'jquery';
+
 let client;
 addLogEntry('Hello World!');
 
-document.getElementById('connect').addEventListener('click', () => {
+$('form#connect').on('submit', () => {
     client = new MqttClient(() => {
         var url = v4.createPresignedURL(
             'GET',
@@ -40,6 +42,10 @@ document.getElementById('connect').addEventListener('click', () => {
     client.on('connect', () => {
         addLogEntry('Successfully connected to AWS IoT Broker!  :-)');
         client.subscribe(MQTT_TOPIC);
+
+        $('form#connect button[type="submit"]').prop('disabled', true);
+        $('form#input').show();
+        $('section#output').show();
     });
 
     client.on('close', () => {
@@ -51,12 +57,16 @@ document.getElementById('connect').addEventListener('click', () => {
     client.on('message', (topic, message) => {
         addLogEntry('Incoming message: ' + message.toString());
     });
+
+    return false;
 });
 
-document.getElementById('send').addEventListener('click', () => {
-    const message = document.getElementById('message').value;
+$('form#input').on('submit', () => {
+    const message = $('#message').val();
     addLogEntry('Outgoing message: ' + message);
     client.publish(MQTT_TOPIC, message);
+    $('#message').val('');
+    return false;
 });
 
 function addLogEntry(info) {

@@ -50,7 +50,7 @@ client.on('message', (topic, message) => {
     $('#messages').append($('<li>').text(message));
 });
 
-$('form').submit(function(evt) {
+$('form').submit((evt) => {
     const $m = $('#m');
     const message = $m.val();
 
