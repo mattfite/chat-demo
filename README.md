@@ -41,11 +41,14 @@ npm run build
 ## Deploy
 
 After building, you can host the root directory somewhere, like [Amazon S3](https://aws.amazon.com/s3)
+
 ```bash
 npm run deploy
 ```
+
 This will copy the contents of the `public/` directory to s3://chat-demo.  In order to work, 
 you must:
+
 - Have aws cli setup in your path
 - Have your AWS cli credentials properly configured
 - Have R/W access to the s3://chat-demo bucket
