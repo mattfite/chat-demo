@@ -1,16 +1,14 @@
-'use strict';
-
 import v4 from 'aws-signature-v4';
 import crypto from 'crypto';
 import { MqttClient } from 'mqtt';
 import websocket from 'websocket-stream';
 
 import {
-  AWS_ACCESS_KEY,
-  AWS_SECRET_ACCESS_KEY,
-  AWS_IOT_ENDPOINT_HOST,
-  AWS_REGION,
-  MQTT_TOPIC
+    AWS_ACCESS_KEY,
+    AWS_SECRET_ACCESS_KEY,
+    AWS_IOT_ENDPOINT_HOST,
+    AWS_REGION,
+    MQTT_TOPIC
 } from '../credentials.json';
 
 import $ from 'jquery';
@@ -50,7 +48,7 @@ client.on('message', (topic, message) => {
     $('#messages').append($('<li>').text(message));
 });
 
-$('form').submit((evt) => {
+$('form').submit(() => {
     const $m = $('#m');
     const message = $m.val();
 
