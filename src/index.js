@@ -17,6 +17,8 @@ let client;
 addLogEntry('Hello World!');
 
 $('form#connect').on('submit', () => {
+    $('form#connect button[type="submit"]').prop('disabled', true);
+
     client = new MqttClient(() => {
         var url = v4.createPresignedURL(
             'GET',
@@ -41,7 +43,6 @@ $('form#connect').on('submit', () => {
         addLogEntry('Successfully connected to AWS IoT Broker!  :-)');
         client.subscribe(MQTT_TOPIC);
 
-        $('form#connect button[type="submit"]').prop('disabled', true);
         $('form#input').show();
         $('section#output').show();
     });
