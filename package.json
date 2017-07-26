@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "aws-signature-v4": "^1.0.1",
+    "jquery": "^3.2.1",
     "mqtt": "^1.7.4",
     "websocket-stream": "^3.1.0"
   }

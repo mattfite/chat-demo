@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 import v4 from 'aws-signature-v4';
 import crypto from 'crypto';
@@ -13,7 +13,7 @@ import {
   MQTT_TOPIC
 } from '../credentials.json';
 
-var client;
+let client;
 addLogEntry('Hello World!');
 
 document.getElementById('connect').addEventListener('click', () => {

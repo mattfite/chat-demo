@@ -1,11 +1,14 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/main.js',
+    entry: {
+        index: './src/index.js',
+        socketio: './src/socketio.js'
+    },
     output: {
         path: path.resolve(__dirname, 'public/js'),
         publicPath: '/js/',
-        filename: 'bundle.js'
+        filename: '[name].js'
     },
     module: {
         loaders: [
