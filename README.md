@@ -21,6 +21,14 @@ npm run webpack-serve
 
 The app is accessible at [localhost:8080](http://localhost:8080). The files are automatically recompiled and served from memory as the contents change.
 
+## Test
+
+There are no tests at the moment, but there is static code analysis, using [eslint](http://eslint.org). To check your code for issues, run the following command:
+
+```bash
+npm run lint
+```
+
 ## Build
 
 Build static files in the public directory with [NPM](https://www.npmjs.com):
