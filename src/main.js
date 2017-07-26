@@ -2,7 +2,7 @@
 
 import v4 from 'aws-signature-v4';
 import crypto from 'crypto';
-import MqttClient from './node_modules/mqtt/lib/client';
+import { MqttClient } from 'mqtt';
 import websocket from 'websocket-stream';
 
 import {
@@ -11,7 +11,7 @@ import {
   AWS_IOT_ENDPOINT_HOST,
   AWS_REGION,
   MQTT_TOPIC
-} from './credentials.json';
+} from '../credentials.json';
 
 var client;
 addLogEntry('Hello World!');

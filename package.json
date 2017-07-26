@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack-build": "webpack --progress --colors",
     "webpack-watch": "webpack --progress --colors --watch",
-    "webpack-serve": "webpack-dev-server --progress --colors",
-    "deploy": "aws s3 cp main.js s3://chat-demo && aws s3 cp index.html s3://chat-demo && aws s3 cp bundle.js s3://chat-demo"
+    "webpack-serve": "webpack-dev-server --progress --colors --content-base public/",
+    "deploy": "aws s3 cp public/ s3://chat-demo --recursive"
   },
   "repository": {
     "type": "git",
