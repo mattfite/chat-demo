@@ -19,7 +19,7 @@ npm install
 npm run webpack-serve
 ```
 
-The app is accessible at [localhost:8080](http://localhost:8080). The files are automatically recompiled and served from memory as the contents change.
+The app is accessible at [localhost:3000](http://localhost:3000). The files are automatically recompiled and served from memory as the contents change.
 
 ## Test
 
