@@ -3,29 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link rel="stylesheet" href="style.css">
     <title>AWS IoT Pub/Sub Demo</title>
 </head>
 <body>
+
+    <div id="loading">
+        <img src="loading.svg" alt="Loading spinner">
+    </div>
+
     <h1>AWS IoT Pub/Sub Demo</h1>
 
-    <form id="connect">
-        <button type="submit">connect!</button>
-    </form>
+    <div class="content">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">Auth0 - JavaScript</a>
 
-    <form id="input" style="display: none;">
-        <div>
-            <label for="message">Message to send:</label>
-            <input type="text" id="message" value="Hello world!" />
+              <button id="btn-home-view" class="btn btn-primary btn-margin">
+                  Home
+              </button>
 
-            <button type="submit">send!</button>
-        </div>
-    </form>
+              <button id="btn-login" class="btn btn-primary btn-margin">
+                  Log In
+              </button>
 
-    <section id="output" style="display: none;">
-        <h2>Log Output</h2>
-        <ul id="the-log"></ul>
-    </section>
+              <button id="btn-logout" class="btn btn-primary btn-margin">
+                  Log Out
+              </button>
+
+            </div>
+          </div>
+        </nav>
+
+        <main class="container">
+            <!-- home view -->
+            <div id="home-view">
+                <h4></h4>
+            </div>
+        </main>
+
+
+        <form id="connect">
+            <button type="submit" id="btn-connect">connect!</button>
+        </form>
+
+        <form id="input" style="display: none;">
+            <div>
+                <label for="message">Message to send:</label>
+                <input type="text" id="message" value="Hello world!" />
+
+                <button type="submit">send!</button>
+            </div>
+        </form>
+
+        <section id="output" style="display: none;">
+            <h2>Log Output</h2>
+            <ul id="the-log"></ul>
+        </section>
+    </div>
 
     <script src="/js/index.js"></script>
+    <script src="https://cdn.auth0.com/js/auth0/8.8/auth0.min.js"></script>
+    <script src="/js/app.js"></script>
 </body>
 </html>

@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack-build": "webpack --progress --colors",
     "webpack-watch": "webpack --progress --colors --watch",
-    "webpack-serve": "webpack-dev-server --progress --colors --content-base public/"
+    "webpack-serve": "webpack-dev-server --progress --colors --content-base public/ --port 3000"
   },
   "repository": {
     "type": "git",
