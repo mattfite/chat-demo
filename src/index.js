@@ -20,7 +20,19 @@ import $ from 'jquery';
 let client;
 addLogEntry('Hello World!');
 
+function isAuthenticated() {
+    // Check whether the current time is past the
+    // access token's expiry time
+    var expiresAt = JSON.parse(localStorage.getItem('expires_at'));
+    return new Date().getTime() < expiresAt;
+}
+
 $('form#connect').on('submit', () => {
+    if(!isAuthenticated()) {
+        console.log("not authenticated" );
+    };
+    console.log("is authenticated" );
+
     $('form#connect button[type="submit"]').prop('disabled', true);
 
     client = new MqttClient(() => {
@@ -53,8 +65,10 @@ $('form#connect').on('submit', () => {
 
     client.on('close', () => {
         addLogEntry('Failed to connect :-(');
-        client.end();  // don't reconnect
-        client = undefined;
+        if( client != undefined ) {
+            client.end(); // don't reconnect
+            client = undefined;
+        }
     });
 
     client.on('message', (topic, message) => {
@@ -106,6 +120,7 @@ window.addEventListener('load', function() {
   var logoutBtn = document.getElementById('btn-logout');
 
   var connectBtn = document.getElementById('btn-connect');
+  var    sendBtn = document.getElementById('btn-send');
 
   homeViewBtn.addEventListener('click', function() {
     homeView.style.display = 'inline-block';
@@ -134,14 +149,9 @@ window.addEventListener('load', function() {
     localStorage.removeItem('access_token');
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
+    client.end();
+    client = undefined;
     displayButtons();
-  }
-
-  function isAuthenticated() {
-    // Check whether the current time is past the
-    // access token's expiry time
-    var expiresAt = JSON.parse(localStorage.getItem('expires_at'));
-    return new Date().getTime() < expiresAt;
   }
 
   function handleAuthentication() {
@@ -168,12 +178,14 @@ window.addEventListener('load', function() {
       logoutBtn.style.display = 'inline-block';
       loginStatus.innerHTML = 'You are logged in!';
       connectBtn.style.display = 'inline-block';
+      sendBtn.style.display = 'inline-block';
     } else {
       loginBtn.style.display = 'inline-block';
       logoutBtn.style.display = 'none';
       loginStatus.innerHTML =
         'You are not logged in! Please log in to continue.';
       connectBtn.style.display = 'none';
+      sendBtn.style.display = 'none';
     }
   }
 
