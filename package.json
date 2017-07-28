@@ -4,7 +4,7 @@
   "description": "A simple serverless chat application",
   "scripts": {
     "build": "npm run webpack-build",
-    "deploy": "aws s3 cp public/ s3://chat-demo --recursive",
+    "deploy": "aws s3 sync public/ s3://chat-demo --delete",
     "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack-build": "webpack --progress --colors",
