@@ -148,8 +148,10 @@ window.addEventListener('load', function() {
         localStorage.removeItem('access_token');
         localStorage.removeItem('id_token');
         localStorage.removeItem('expires_at');
-        client.end();
-        client = undefined;
+        if( client != undefined ) {
+            client.end();
+            client = undefined;
+        }
         displayButtons();
     }
 
