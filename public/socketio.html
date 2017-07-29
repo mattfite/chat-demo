@@ -22,9 +22,9 @@
                 <a class="navbar-brand" href="#">Chat Demo</a>
             </div>
                 <ul class="nav navbar-nav navbar-right">
-                    <button type="button" class="btn btn-default navbar-btn">Sign in</button>
-                    <button type="button" class="btn btn-default navbar-btn">Sign out</button>
-                    <p class="navbar-text">Not signed in</p>
+                    <button type="button" id="btn-login" class="btn btn-default navbar-btn">Sign in</button>
+                    <button type="button" id="btn-logout" class="btn btn-default navbar-btn">Sign out</button>
+                    <p class="navbar-text" id="status">Not signed in</p>
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
@@ -33,9 +33,11 @@
     </nav>
     <ul id="messages"></ul>
     <form action="">
-    <input id="m" autocomplete="off" /><button>Send</button>
+    <input id="m" autocomplete="off" /><button id="btn-send">Send</button>
     </form>
-    <script src="/js/socketio.js"></script>
+    <script   src="http://code.jquery.com/jquery-3.2.1.min.js"   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdn.auth0.com/js/auth0/8.8/auth0.min.js"></script>
+    <script src="/js/socketio.js"></script>
 </body>
 </html>
